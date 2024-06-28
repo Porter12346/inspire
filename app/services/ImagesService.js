@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js";
 import { api } from "./AxiosService.js";
 
 class ImagesService {
@@ -8,7 +9,7 @@ class ImagesService {
     async getImage() {
         let response = await api.get('api/images')
         console.log(response.data.largeImgUrl);
-        return (`${response.data.largeImgUrl}`)
+        AppState.imageUrl = response.data.largeImgUrl
     }
 
 }
