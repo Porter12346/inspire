@@ -10,7 +10,6 @@ export class TimeController {
     checkTime() {
         let time = new Date()
         let adjustedTime = time.toLocaleTimeString()
-        console.log(adjustedTime)
         drawTime(adjustedTime)
     }
 }

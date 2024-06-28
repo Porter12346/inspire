@@ -13,3 +13,14 @@
 .high {
   height: 90vh;
 }
+
+body {
+  background-position: center;
+  background-size: auto;
+  background-clip: cover;
+}
+
+.time-string-shadow {
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+  font-size: 10ems;
+}
