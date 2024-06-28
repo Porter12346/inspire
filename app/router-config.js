@@ -1,4 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
+import { TimeController } from "./controllers/TimeController.js";
 
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
@@ -7,8 +8,8 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [],
-    view: ''
+    controllers: [TimeController],
+    view: 'app/views/MainView.html'
     
   },
   {
