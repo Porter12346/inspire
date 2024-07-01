@@ -25,8 +25,8 @@ export class TodosController {
         let todos = AppState.todos
         todos.forEach(todo => {
             todosHTMLString += `<div
-                class="border border-light border-1 d-flex justify-content-between todosBg text-light align-items-center rounded">
-                <input class="form-check-input fs-4 my-0 mx-1" type="checkbox">
+                class="border border-light border-1 d-flex justify-content-between todosBg text-light align-items-center rounded mt-1">
+                <input class="form-check-input fs-4 my-0 mx-1" type="checkbox" onchange="app.TodosController.toggleTodo('${todo.id}')">
                 <p class="m-0">${todo.description}</p>
                 <button class="btn btn-outline-danger mdi mdi-delete"></button>
             </div>`
@@ -40,6 +40,14 @@ export class TodosController {
         let data = getFormData(form)
         try {
             await todosService.postTodo(data)
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+
+    async toggleTodo(id) {
+        try {
+            await todosService.toggleTodo(id)
         } catch (error) {
             Pop.error(error)
         }

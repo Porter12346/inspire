@@ -3,6 +3,7 @@ import { api } from "./AxiosService.js";
 
 class TodosService {
 
+
     constructor() {
         console.log('todo service init');
     }
@@ -21,6 +22,14 @@ class TodosService {
 
     async postTodo(data) {
         let response = await api.post('/api/todos', data)
+        console.log(response)
+    }
+
+    async toggleTodo(id) {
+        let todo = AppState.todos.find(todo => todo.id = id)
+        let completed = { completed: !todo.completed }
+        let response = await api.post(`api/todos/${id}`, completed)
+        todo.completed = !todo.completed
         console.log(response)
     }
 }
