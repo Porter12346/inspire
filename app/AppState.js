@@ -16,6 +16,8 @@ class ObservableAppState extends EventEmitter {
   tempCelsius = 0
 
   tempFahrenheit = 0
+
+  todos = []
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

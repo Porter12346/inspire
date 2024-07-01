@@ -11,6 +11,7 @@ class TodosService {
         if (AppState.account) {
             let response = await api.get('/api/todos')
             console.log(response.data);
+            AppState.todos = response.data
         }
         else {
             console.log('not logged in');
