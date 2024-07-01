@@ -17,7 +17,21 @@
 
                 </div>
                 <div class="border border-dark rounded">
-                    <div>todo here</div>
+                    <div>
+                        <form onsubmit='app.TodosController.postTodo()'>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="New Todo" name="description">
+                                <button class="btn btn-outline-secondary">Button</button>
+                            </div>
+                            <div id="todos-section">
+                                <div class="border border-dark border-1 d-flex">
+                                    <input type="checkbox" name="completed" id="">
+                                    <p>test</p>
+                                    <button class="mdi mdi-delete"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
             </div>
