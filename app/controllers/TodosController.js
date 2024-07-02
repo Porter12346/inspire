@@ -26,7 +26,7 @@ export class TodosController {
         todos.forEach(todo => {
             todosHTMLString += `<div
                 class="border border-light border-1 d-flex justify-content-between todosBg text-light align-items-center rounded mt-1">
-                <input class="form-check-input fs-4 my-0 mx-1" type="checkbox" onchange="app.TodosController.toggleTodo('${todo.id}')">
+                <input class="form-check-input fs-4 my-0 mx-1" type="checkbox" onchange="app.TodosController.toggleTodo('${todo.id}')" ${todo.completed ? "checked" : ""}>
                 <p class="m-0">${todo.description}</p>
                 <button class="btn btn-outline-danger mdi mdi-delete"></button>
             </div>`
