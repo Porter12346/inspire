@@ -28,7 +28,7 @@ export class TodosController {
                 class="border border-light border-1 d-flex justify-content-between todosBg text-light align-items-center rounded mt-1">
                 <input class="form-check-input fs-4 my-0 mx-1" type="checkbox" onchange="app.TodosController.toggleTodo('${todo.id}')" ${todo.completed ? "checked" : ""}>
                 <p class="m-0">${todo.description}</p>
-                <button class="btn btn-outline-danger mdi mdi-delete"></button>
+                <button class="btn btn-outline-danger mdi mdi-delete" onclick="app.TodosController.deleteTodo('${todo.id}')"></button>
             </div>`
         });
         setHTML('todos-section', todosHTMLString)
@@ -48,6 +48,14 @@ export class TodosController {
     async toggleTodo(id) {
         try {
             await todosService.toggleTodo(id)
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+
+    async deleteTodo(id) {
+        try {
+            await todosService.deleteTodo(id)
         } catch (error) {
             Pop.error(error)
         }
