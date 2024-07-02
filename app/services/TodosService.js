@@ -27,8 +27,10 @@ class TodosService {
 
     async toggleTodo(id) {
         let todo = AppState.todos.find(todo => todo.id = id)
-        let completed = { completed: !todo.completed }
-        let response = await api.post(`api/todos/${id}`, completed)
+        // let response = api.get(`api/todos/${id}`)
+        // console.log(response)
+        let completed = { completed : !todo.completed }
+        let response = await api.put(`api/todos/${id}`, completed)
         todo.completed = !todo.completed
         console.log(response)
     }
