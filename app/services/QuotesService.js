@@ -10,6 +10,7 @@ class QuotesService {
         let response = await api.get('api/quotes')
         console.log(response.data)
         AppState.quote = response.data
+
     }
 }
 

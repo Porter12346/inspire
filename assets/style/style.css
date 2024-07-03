@@ -33,3 +33,14 @@ body {
 .todosBg {
   background-color: rgba(0, 0, 0, 0.5)
 }
+
+#author-string {
+  visibility: hidden;
+  transition: visibility 2s;
+  transition-timing-function: ease;
+}
+
+#quote-string:hover+#author-string {
+  visibility:  visible;
+  
+}

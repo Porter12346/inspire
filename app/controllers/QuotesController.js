@@ -20,6 +20,8 @@ export class QuotesController {
 
     drawQuote() {
         let quote = AppState.quote.content
+        let author = AppState.quote.author
         setText('quote-string', `"${quote}"`)
+        setText('author-string', `-${author}`)
     }
 }
