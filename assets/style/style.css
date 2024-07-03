@@ -35,12 +35,14 @@ body {
 }
 
 #author-string {
-  visibility: hidden;
-  transition: visibility 2s;
+  opacity: 0;
   transition-timing-function: ease;
+  transition: all 10s linear;
+  filter: blur(20px);
 }
 
 #quote-string:hover+#author-string {
-  visibility:  visible;
-  
+  opacity: 1;
+  filter: blur(0px);
+  transition: all 2s linear;
 }
