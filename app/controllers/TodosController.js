@@ -8,6 +8,7 @@ import { setHTML } from "../utils/Writer.js";
 export class TodosController {
     constructor() {
         console.log('todos controller init');
+        AppState.on('account', this.displayForm)
         AppState.on('account', this.getTodos)
         AppState.on('todos', this.drawTodos)
     }
@@ -18,6 +19,11 @@ export class TodosController {
         } catch (error) {
             Pop.error(error)
         }
+    }
+
+    displayForm(){
+        let form = document.getElementById("todo-form")
+        form.style.display = 'block'
     }
 
     drawTodos() {
