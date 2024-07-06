@@ -47,6 +47,6 @@ body {
   transition: all 2s linear;
 }
 
-#todo-form{
+#todo-form, #todo-count{
   display: none
 }

@@ -3,7 +3,7 @@ import { api } from "../services/AxiosService.js";
 import { todosService } from "../services/todosService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
-import { setHTML } from "../utils/Writer.js";
+import { setHTML, setText } from "../utils/Writer.js";
 
 export class TodosController {
     constructor() {
@@ -21,9 +21,11 @@ export class TodosController {
         }
     }
 
-    displayForm(){
+    displayForm() {
         let form = document.getElementById("todo-form")
+        let count = document.getElementById("todo-count")
         form.style.display = 'block'
+        count.style.display = 'block'
     }
 
     drawTodos() {
@@ -38,6 +40,7 @@ export class TodosController {
             </div>`
         });
         setHTML('todos-section', todosHTMLString)
+        setText('todo-count', `${todos.length} Todos remaining`)
     }
 
     async postTodo() {
