@@ -44,9 +44,13 @@ body {
 #quote-string:hover+#author-string {
   opacity: 1;
   filter: blur(0px);
-  transition: all 2s linear;
+  transition: all 1s linear;
 }
 
 #todo-form, #todo-count{
   display: none
+}
+
+.todo-element{
+  background-color: rgba(0, 0, 0, 0.5)
 }
