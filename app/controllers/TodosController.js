@@ -40,7 +40,11 @@ export class TodosController {
             </div>`
         });
         setHTML('todos-section', todosHTMLString)
-        setText('todo-count', `${todos.length} Todos remaining`)
+        let num = 0
+        todos.forEach(todo => {
+            if(todo.completed != true)num++
+        });
+        setText('todo-count', `${num} Todos remaining`)
     }
 
     async postTodo() {
@@ -57,6 +61,7 @@ export class TodosController {
     async toggleTodo(id) {
         try {
             await todosService.toggleTodo(id)
+            this.drawTodos()
         } catch (error) {
             Pop.error(error)
         }
