@@ -17,10 +17,6 @@ export const router = new Router([
 
   },
   {
-    path: '#/about',
-    view: 'app/views/AboutView.html'
-  },
-  {
     path: '#/account',
     middleware: [AuthGuard],
     controllers: [AccountController],
