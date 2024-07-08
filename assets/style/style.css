@@ -26,7 +26,7 @@ body {
 }
 
 .border-custom-weather {
-  border-radius: 0% 0% 50% 50%;
+  border-radius: 50% 50% 50% 50%;
   height: 10%;
 }
 
